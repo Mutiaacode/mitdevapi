@@ -4,7 +4,7 @@ const axios = require('axios');     // Import Axios
 require('dotenv').config();          // Load environment variables
 
 const app = express();               // Initialize Express app
-const port = process.env.PORT || 5000; // Use environment port or default to 5000
+const port = process.env.PORT; // Ini sudah cukup
 
 // Middleware untuk mengizinkan request dari domain klien
 app.use(cors({ origin: 'https://mitdevai.vercel.app' })); // Atur CORS untuk domain klien
