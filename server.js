@@ -4,13 +4,11 @@ const axios = require('axios');     // Import Axios
 require('dotenv').config();          // Load environment variables
 
 const app = express();               // Initialize Express app
-const port = process.env.PORT; // Ini sudah cukup
+const port = process.env.PORT;      // Gunakan port dari environment
 
-// Middleware untuk mengizinkan request dari domain klien
-app.use(cors({ origin: 'https://mitdevai.vercel.app' })); // Atur CORS untuk domain klien
+app.use(cors());                     // Atur CORS
 app.use(express.json());             // Middleware untuk parsing JSON
 
-// Route untuk GET request di root
 app.get('/', (req, res) => {
     res.send('Server berjalan dengan baik'); // Response untuk GET /
 });
@@ -36,7 +34,5 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-// Mulai server
-app.listen(port, () => {
-    console.log(`Server listening at port ${port}`);
-});
+// Hapus bagian app.listen() untuk deploy di Vercel
+module.exports = app; // Export app untuk digunakan di Vercel
