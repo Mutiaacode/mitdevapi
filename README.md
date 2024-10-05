@@ -1,4 +1,3 @@
-Berikut README.md lengkap untuk project "Mitdev API":
 
 ```markdown
 # 🌐 Mitdev API
